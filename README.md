@@ -71,8 +71,6 @@ No two learners experience the same curriculum.
 
 ## 👨‍💻 Project Team
 
-> *(Add names below)*
-
 - 👤 **Gaurav Chaudhary (Team Leader)**
 - 👤 **Sahil Sharma**
 - 👤 **Ayushi Yadav**
