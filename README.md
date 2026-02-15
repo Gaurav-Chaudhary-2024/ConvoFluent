@@ -73,7 +73,7 @@ No two learners experience the same curriculum.
 
 > *(Add names below)*
 
-- 👤 **Gaurav Chaudhary**
+- 👤 **Gaurav Chaudhary (Team Leader)**
 - 👤 **Sahil Sharma**
 - 👤 **Ayushi Yadav**
 - 👤 **Roushan Kumar**
