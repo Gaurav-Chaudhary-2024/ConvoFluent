@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Progress Indicator -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step 2 of 2"
+                android:textColor="#6B3EFF"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginEnd="12dp"/>
+
+            <!-- Step 1 bar (completed) -->
+            <View
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:background="@drawable/progress_bar_active"
+                android:layout_marginEnd="6dp"/>
+
+            <!-- Step 2 bar (active) -->
+            <View
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:background="@drawable/progress_bar_active"/>
+
+        </LinearLayout>
+
+        <!-- Back Arrow + Logo -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back"
+                android:layout_gravity="start|center_vertical"/>
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_logo"
+                android:layout_gravity="center"
+                android:contentDescription="ConvoFluent Logo"/>
+        </FrameLayout>
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join ConvoFluent"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A2E"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start your linguistic journey today"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Section 2: Personalize Profile -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:background="@drawable/step_badge"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personalize Profile"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"/>
+        </LinearLayout>
+
+        <!-- Gender Selection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="28dp">
+
+            <!-- Male Card -->
+            <LinearLayout
+                android:id="@+id/cardMale"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/gender_card_inactive"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_person"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Male"/>
+
+                <TextView
+                    android:id="@+id/tvMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textSize="15sp"
+                    android:textColor="#444444"/>
+            </LinearLayout>
+
+            <!-- Female Card -->
+            <LinearLayout
+                android:id="@+id/cardFemale"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/gender_card_inactive">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_person"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Female"/>
+
+                <TextView
+                    android:id="@+id/tvFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    android:textSize="15sp"
+                    android:textColor="#444444"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Section 3: I want to learn -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:text="3"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:background="@drawable/step_badge"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I want to learn"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"/>
+        </LinearLayout>
+
+        <!-- Language Grid Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Spanish -->
+            <LinearLayout
+                android:id="@+id/cardSpanish"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/gender_card_inactive"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_language"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Spanish"/>
+
+                <TextView
+                    android:id="@+id/tvSpanish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spanish"
+                    android:textSize="14sp"
+                    android:textColor="#444444"/>
+            </LinearLayout>
+
+            <!-- French -->
+            <LinearLayout
+                android:id="@+id/cardFrench"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/gender_card_inactive">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_language"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="French"/>
+
+                <TextView
+                    android:id="@+id/tvFrench"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="French"
+                    android:textSize="14sp"
+                    android:textColor="#444444"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Language Grid Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp">
+
+            <!-- German -->
+            <LinearLayout
+                android:id="@+id/cardGerman"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/gender_card_inactive"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_language"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="German"/>
+
+                <TextView
+                    android:id="@+id/tvGerman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="German"
+                    android:textSize="14sp"
+                    android:textColor="#444444"/>
+            </LinearLayout>
+
+            <!-- Japanese -->
+            <LinearLayout
+                android:id="@+id/cardJapanese"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/gender_card_inactive">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_language"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Japanese"/>
+
+                <TextView
+                    android:id="@+id/tvJapanese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Japanese"
+                    android:textSize="14sp"
+                    android:textColor="#444444"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Finish Button -->
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Finish Setup →"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_primary"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
