@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.JapaneseApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_dark</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+    </style>
+
+    <!-- Chat bubble AI -->
+    <style name="BubbleAI">
+        <item name="android:background">@drawable/bg_bubble_ai</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Chat bubble Me -->
+    <style name="BubbleMe">
+        <item name="android:background">@drawable/bg_bubble_me</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Card surface -->
+    <style name="CardSurface">
+        <item name="android:background">@drawable/bg_card_surface</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- Section tag pill -->
+    <style name="PillTag">
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>
