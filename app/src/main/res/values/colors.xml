@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Purple -->
+    <color name="purple_primary">#7C3AED</color>
+    <color name="purple_light">#A78BFA</color>
+    <color name="purple_dark">#4F46E5</color>
+    <color name="purple_surface">#1A1A2E</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_dark">#0E0E16</color>
+    <color name="bg_card">#13131F</color>
+    <color name="bg_surface">#1A1A2E</color>
+    <color name="bg_elevated">#2A2A40</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0CC</color>
+    <color name="text_muted">#666688</color>
+    <color name="text_hint">#444466</color>
+
+    <!-- Accents — ALL included -->
+    <color name="accent_green">#10B981</color>
+    <color name="accent_amber">#F59E0B</color>
+    <color name="accent_red">#EF4444</color>
+    <color name="accent_blue">#4F46E5</color>
+
+    <!-- Chat bubbles -->
+    <color name="bubble_ai">#1A1A2E</color>
+    <color name="bubble_me">#7C3AED</color>
+
+    <!-- Material required -->
+    <color name="colorPrimary">#7C3AED</color>
+    <color name="colorPrimaryVariant">#4F46E5</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#A78BFA</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSurface">#1A1A2E</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="colorBackground">#0E0E16</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorError">#EF4444</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+</resources>
