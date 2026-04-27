@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".TestResultActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#333333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test Results"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnHelp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Help"
+                android:src="@drawable/ic_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#333333" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Mastery Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#F3E8FF"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="★ MASTERY ACHIEVED"
+                        android:textColor="#8E30FF"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="82%"
+                        android:textColor="#8E30FF"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Great job, start you're getting closer to B2 level!"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <!-- Score Cards Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+                                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_crown" app:tint="#8E30FF" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="XP EARNED" android:textSize="8sp" android:textColor="#999999" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+450" android:textStyle="bold" android:textColor="#333333" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+                                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_list" app:tint="#8E30FF" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GRADE" android:textSize="8sp" android:textColor="#999999" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="A-" android:textStyle="bold" android:textColor="#333333" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+                                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_close" app:tint="#EF4444" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TIME" android:textSize="8sp" android:textColor="#999999" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12:05" android:textStyle="bold" android:textColor="#333333" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Skill Breakdown -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="SKILL BREAKDOWN"
+                android:textColor="#333333"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LISTENING" android:textSize="10sp" android:textColor="#999999" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="100%" android:textStyle="bold" android:textColor="#333333" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SPEAKING" android:textSize="10sp" android:textColor="#999999" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="65%" android:textStyle="bold" android:textColor="#333333" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="READING" android:textSize="10sp" android:textColor="#999999" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="90%" android:textStyle="bold" android:textColor="#333333" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="WRIT" android:textSize="10sp" android:textColor="#999999" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="75" android:textStyle="bold" android:textColor="#333333" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="8dp"
+                android:progress="80"
+                android:progressDrawable="@drawable/custom_progressbar" />
+
+            <!-- Detailed Analysis -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DETAILED ANALYSIS"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Showing 4 Questions"
+                    android:textColor="#999999"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <!-- Question 1: Listening -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_info" app:tint="#8E30FF" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="Question 1" android:textStyle="bold" android:textSize="12sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="#F3E8FF" android:paddingHorizontal="8dp" android:text="Listening" android:textColor="#8E30FF" android:textSize="10sp" />
+                    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_circle_checked" app:tint="#CCCCCC" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="What did the speaker order?" android:textStyle="bold" android:textColor="#333333" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="#F5F3FF" android:padding="12dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:text="YOUR ANSWER" android:textSize="8sp" android:textColor="#999999" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:text="A hot coffee with milk" android:textColor="#333333" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="✓ Correct" android:textColor="#8E30FF" android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Question 2: Grammar (Error) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_list" app:tint="#8E30FF" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="Question 2" android:textStyle="bold" android:textSize="12sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="#F3E8FF" android:paddingHorizontal="8dp" android:text="Grammar" android:textColor="#8E30FF" android:textSize="10sp" />
+                    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:src="@drawable/ic_close" app:tint="#EF4444" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Translate: 'I am going to the station.'" android:textStyle="bold" android:textColor="#333333" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="#FEF2F2" android:padding="12dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:text="YOUR ANSWER" android:textSize="8sp" android:textColor="#EF4444" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:text="Je suis aller à la gare." android:textColor="#EF4444" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="#F5F3FF" android:padding="12dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:text="CORRECT ANSWER" android:textSize="8sp" android:textColor="#8E30FF" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:text="Je vais à la gare." android:textColor="#333333" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="#F3E8FF" android:padding="12dp" android:orientation="vertical">
+                    <TextView android:text="★ EXPERT TIP" android:textColor="#8E30FF" android:textSize="8sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:text="You used 'aller' instead of 'vais' for the present continuous tense. In French, 'je vais' covers both 'I go' and 'I am going'." android:textColor="#6D28D9" android:textSize="10sp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Question 3 and 4 placeholders... -->
+
+            <!-- Summary Insights -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#F9FAFB"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_info" app:tint="#8E30FF" />
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:text="Focus on Pronunciation" android:textStyle="bold" android:textColor="#333333" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:text="You missed 2 speaking tasks. Practice your vowels to improve!" android:textSize="10sp" android:textColor="#666666" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#F9FAFB"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_lightning" app:tint="#8E30FF" />
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:text="Performance Insight" android:textStyle="bold" android:textColor="#333333" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:text="Average 'Speaking' score up by 15%." android:textSize="10sp" android:textColor="#666666" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView android:text="Quick Practice" android:textColor="#8E30FF" android:textSize="10sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Footer Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Share Result"
+                    android:textAllCaps="false"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_external_link" />
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="56dp"
+                    android:text="Retake Test"
+                    android:textAllCaps="false"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_refresh" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReviewMistakes"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#8E30FF"
+                android:text="Review Mistakes ➔"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
