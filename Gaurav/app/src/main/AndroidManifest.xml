@@ -22,6 +22,15 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ProfileSetupActivity" />
+        <activity android:name=".InterestsActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".OrderingAtIzakaya" />
+        <activity android:name=".DailyExpressionsCommuting" />
+        <activity android:name=".AnimeSlangCasualTalk" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".AlphabetActivity" />
+        <activity android:name=".ScriptLessonActivity" />
+        <activity android:name=".LeaderboardActivity" />
     </application>
 
 </manifest>

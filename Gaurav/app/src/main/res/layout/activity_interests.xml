@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:paddingBottom="24dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <!-- Purple Circle Logo -->
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="20dp">
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/logo_circle_bg"/>
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo"
+                    android:contentDescription="Logo"/>
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Master Languages"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="with AI Context"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#6B3EFF"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personalized conversations based on your interests and progress."
+                android:textSize="14sp"
+                android:textColor="#888888"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Select Interests Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Interests"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Counter badge -->
+            <TextView
+                android:id="@+id/tvSelectedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 selected"
+                android:textSize="12sp"
+                android:textColor="#6B3EFF"
+                android:background="@drawable/badge_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_sparkle"
+                android:contentDescription="AI"/>
+        </LinearLayout>
+
+        <!-- Interest Grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp">
+
+            <!-- Row 1 -->
+            <LinearLayout
+                android:id="@+id/cardAnime"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_anime"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Anime"/>
+                <TextView
+                    android:id="@+id/tvAnime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anime &amp; Manga"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardTravel"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_travel"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Travel"/>
+                <TextView
+                    android:id="@+id/tvTravel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Travel"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout
+                android:id="@+id/cardFood"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_food"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Food"/>
+                <TextView
+                    android:id="@+id/tvFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food &amp; Dining"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardGaming"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_gaming"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Gaming"/>
+                <TextView
+                    android:id="@+id/tvGaming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gaming"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- Row 3 -->
+            <LinearLayout
+                android:id="@+id/cardTech"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_tech"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Technology"/>
+                <TextView
+                    android:id="@+id/tvTech"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Technology"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardMusic"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_music"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Music"/>
+                <TextView
+                    android:id="@+id/tvMusic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- Row 4 -->
+            <LinearLayout
+                android:id="@+id/cardSports"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_sports"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Sports"/>
+                <TextView
+                    android:id="@+id/tvSports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sports"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardBooks"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_books"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Books"/>
+                <TextView
+                    android:id="@+id/tvBooks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Books"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- Row 5 -->
+            <LinearLayout
+                android:id="@+id/cardArt"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_art"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Art"/>
+                <TextView
+                    android:id="@+id/tvArt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Art &amp; Design"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardMovies"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/interest_card_inactive">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_movies"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Movies"/>
+                <TextView
+                    android:id="@+id/tvMovies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movies &amp; TV"
+                    android:textSize="13sp"
+                    android:textColor="#444444"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </GridLayout>
+
+        <!-- Why Interests Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/info_card_background"
+            android:padding="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_sparkle"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Info"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Why interests?"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="We use these to tailor your AI conversation scenarios, making learning relevant to your life."
+                    android:textSize="12sp"
+                    android:textColor="#888888"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CTA Button -->
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Select an Interest"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_disabled"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp"
+            android:enabled="false"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI-POWERED PERSONALIZED LEARNING"
+            android:textSize="11sp"
+            android:textColor="#AAAAAA"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+</ScrollView>

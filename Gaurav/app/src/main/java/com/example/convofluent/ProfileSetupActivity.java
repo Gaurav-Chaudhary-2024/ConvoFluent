@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 
 public class ProfileSetupActivity extends AppCompatActivity {
 
@@ -70,8 +71,8 @@ public class ProfileSetupActivity extends AppCompatActivity {
         // Finish button
         btnFinish.setOnClickListener(v -> {
             if (validateForm()) {
-                // TODO: Navigate to Home/Dashboard screen
-                Toast.makeText(this, "Welcome to ConvoFluent! 🎉", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, InterestsActivity.class);
+                startActivity(intent);
             }
         });
     }
