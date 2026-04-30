@@ -1,16 +1,18 @@
 package com.example.convofluent;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Launch RegisterActivity as the first screen
-        Intent intent = new Intent(this, RegisterActivity.class);
-        startActivity(intent);
-        finish(); // close MainActivity so back button doesn't return to it
+        if (SessionManager.isLoggedIn(this)) {
+            startActivity(new Intent(this, HomeActivity.class));
+        } else {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+        finish();
     }
 }

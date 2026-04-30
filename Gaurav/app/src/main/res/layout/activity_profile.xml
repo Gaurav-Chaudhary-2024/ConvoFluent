@@ -76,6 +76,7 @@
                         android:layout_gravity="top|center_horizontal"/>
 
                     <TextView
+                        android:id="@+id/tvLevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="LVL 14"
@@ -92,6 +93,7 @@
 
                 <!-- Name -->
                 <TextView
+                    android:id="@+id/tvProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sarah Jenkins"
@@ -102,6 +104,7 @@
 
                 <!-- Subtitle -->
                 <TextView
+                    android:id="@+id/tvProfileSubtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Learning Japanese &amp; French"
@@ -127,6 +130,7 @@
                         android:letterSpacing="0.08"/>
 
                     <TextView
+                        android:id="@+id/tvXpProgress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2,450 / 3,000"
@@ -135,27 +139,16 @@
                         android:textColor="#6B3EFF"/>
                 </LinearLayout>
 
-                <FrameLayout
+                <!-- Progress Bar Fix -->
+                <ProgressBar
+                    android:id="@+id/pbXp"
+                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="8dp">
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="8dp"
-                        android:background="@drawable/progress_track"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="8dp"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="8dp"
-                            android:layout_weight="0.82"
-                            android:background="@drawable/progress_fill"/>
-                    </LinearLayout>
-                </FrameLayout>
+                    android:layout_height="8dp"
+                    android:progressDrawable="@drawable/progress_fill"
+                    android:background="@drawable/progress_track"
+                    android:max="100"
+                    android:progress="82"/>
 
             </LinearLayout>
 
@@ -191,6 +184,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvStreakValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="12 Days"
@@ -240,6 +234,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvRankingValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Top 5%"
@@ -677,6 +672,7 @@
                             android:textColor="#1A1A2E"/>
 
                         <TextView
+                            android:id="@+id/tvDailyGoalValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="15 minutes / day"
@@ -718,6 +714,7 @@
                             android:textColor="#1A1A2E"/>
 
                         <TextView
+                            android:id="@+id/tvDifficultyValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Intermediate (B1)"

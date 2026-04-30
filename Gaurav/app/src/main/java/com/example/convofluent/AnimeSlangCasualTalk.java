@@ -1,50 +1,25 @@
 package com.example.convofluent;
 
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class AnimeSlangCasualTalk extends AppCompatActivity {
+public class AnimeSlangCasualTalk extends LessonPlayerActivity {
 
-    private ImageButton btnBack, btnInfo, btnMic, btnSend;
-    private EditText etMessage;
-    private LinearLayout option1, option2, option3;
+    @Override protected String getLessonName() { return "AnimeSlangCasualTalk"; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_player);
-
-        initViews();
         setupContent();
-        setupClickListeners();
-    }
-
-    private void initViews() {
-        btnBack   = findViewById(R.id.btnBack);
-        btnInfo   = findViewById(R.id.btnInfo);
-        btnMic    = findViewById(R.id.btnMic);
-        btnSend   = findViewById(R.id.btnSend);
-        etMessage = findViewById(R.id.etMessage);
-        option1   = findViewById(R.id.option1);
-        option2   = findViewById(R.id.option2);
-        option3   = findViewById(R.id.option3);
+        startConversation();
     }
 
     private void setupContent() {
-        ((android.widget.TextView) findViewById(R.id.tvLessonTitle))
-                .setText("Anime Slang: Casual Talk");
-        ((android.widget.TextView) findViewById(R.id.tvTopicTitle))
-                .setText("Topic: Casual Japanese");
-        ((android.widget.TextView) findViewById(R.id.tvTopicDesc))
-                .setText("Learn informal expressions and slang commonly used in anime and everyday casual conversations.");
-        ((android.widget.TextView) findViewById(R.id.tvNextTask))
-                .setText("Next Task: Respond Casually");
-
-        // Options
+        ((android.widget.TextView) findViewById(R.id.tvLessonTitle)).setText("Anime Slang: Casual Talk");
+        ((android.widget.TextView) findViewById(R.id.tvTopicTitle)).setText("Topic: Casual Japanese");
+        ((android.widget.TextView) findViewById(R.id.tvTopicDesc)).setText(
+                "Learn informal expressions and slang commonly used in anime and everyday casual conversations.");
+        ((android.widget.TextView) findViewById(R.id.tvNextTask)).setText("Next Task: Respond Casually");
         ((android.widget.TextView) findViewById(R.id.tvOption1Japanese)).setText("Sugoi ne!");
         ((android.widget.TextView) findViewById(R.id.tvOption1English)).setText("That's amazing!");
         ((android.widget.TextView) findViewById(R.id.tvOption2Japanese)).setText("Maji de?");
@@ -53,30 +28,28 @@ public class AnimeSlangCasualTalk extends AppCompatActivity {
         ((android.widget.TextView) findViewById(R.id.tvOption3English)).setText("Wow / That's crazy!");
     }
 
-    private void setupClickListeners() {
-        btnBack.setOnClickListener(v -> finish());
+    @Override
+    protected String getSystemPrompt() {
+        return "You are a fun, enthusiastic Japanese language tutor running a casual anime slang lesson. " +
+                "You play the role of a Japanese high school student who loves anime. " +
+                "Have a casual conversation using common anime slang and everyday expressions. " +
+                "When the student uses Japanese slang, react with excitement, confirm correct usage, " +
+                "gently correct mistakes, and keep the chat going. " +
+                "If they respond in English, encourage them to try the Japanese version. " +
+                "Keep replies SHORT — 2-4 sentences max. " +
+                "Always include a slang phrase with its meaning in parentheses. Keep it fun!";
+    }
 
-        btnInfo.setOnClickListener(v ->
-                Toast.makeText(this, "Lesson: Anime Slang - Casual Talk", Toast.LENGTH_SHORT).show());
+    @Override
+    protected String getOpeningMessage() {
+        return "Yoo! 👋 Hajimemashite~ Nice to meet you!\n\n" +
+                "I'm Hiro, obsessed with anime. Let's chat in casual Japanese!\n\n" +
+                "Kick things off with \"Sugoi ne!\" (Amazing, right?!) " +
+                "or tap one of the options below. Let's gooo! 🎌";
+    }
 
-        option1.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Sugoi ne!", Toast.LENGTH_SHORT).show());
-
-        option2.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Maji de?", Toast.LENGTH_SHORT).show());
-
-        option3.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Yabai!", Toast.LENGTH_SHORT).show());
-
-        btnMic.setOnClickListener(v ->
-                Toast.makeText(this, "Voice input coming soon!", Toast.LENGTH_SHORT).show());
-
-        btnSend.setOnClickListener(v -> {
-            String message = etMessage.getText().toString().trim();
-            if (!message.isEmpty()) {
-                Toast.makeText(this, "Sent: " + message, Toast.LENGTH_SHORT).show();
-                etMessage.setText("");
-            }
-        });
+    @Override
+    protected void onInfoClick() {
+        Toast.makeText(this, "Lesson: Anime Slang - Casual Talk", Toast.LENGTH_SHORT).show();
     }
 }

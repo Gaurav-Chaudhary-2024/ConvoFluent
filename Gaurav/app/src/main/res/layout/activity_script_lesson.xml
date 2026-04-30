@@ -77,6 +77,7 @@
                     android:letterSpacing="0.08"/>
 
                 <TextView
+                    android:id="@+id/tvSetProgress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2 / 5 MASTERED"
@@ -87,29 +88,18 @@
             </LinearLayout>
 
             <!-- Progress Bar -->
-            <FrameLayout
+            <ProgressBar
+                android:id="@+id/progressBarSet"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:background="@drawable/progress_track"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:weightSum="1">
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="8dp"
-                        android:layout_weight="0.4"
-                        android:background="@drawable/progress_fill"/>
-                </LinearLayout>
-            </FrameLayout>
+                android:layout_marginBottom="12dp"
+                android:progressDrawable="@drawable/progress_fill"
+                android:background="@drawable/progress_track"
+                android:max="100"
+                android:progress="40"/>
 
             <!-- Character Strip -->
             <HorizontalScrollView
@@ -126,31 +116,24 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- あ - Active + Mastered -->
+                    <!-- Character 1 -->
                     <LinearLayout
+                        android:id="@+id/stripItem1"
                         android:layout_width="68dp"
                         android:layout_height="80dp"
                         android:orientation="vertical"
                         android:gravity="center"
                         android:background="@drawable/char_strip_active"
                         android:layout_marginEnd="8dp">
-
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_check_teal"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="4dp"
-                            android:contentDescription="Mastered"/>
-
                         <TextView
+                            android:id="@+id/stripChar1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="あ"
                             android:textSize="28sp"
                             android:textColor="#6B3EFF"/>
-
                         <TextView
+                            android:id="@+id/stripRomaji1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="A"
@@ -159,31 +142,24 @@
                             android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <!-- い - Mastered -->
+                    <!-- Character 2 -->
                     <LinearLayout
+                        android:id="@+id/stripItem2"
                         android:layout_width="68dp"
                         android:layout_height="80dp"
                         android:orientation="vertical"
                         android:gravity="center"
                         android:background="@drawable/char_strip_inactive"
                         android:layout_marginEnd="8dp">
-
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:src="@drawable/ic_check_teal"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="4dp"
-                            android:contentDescription="Mastered"/>
-
                         <TextView
+                            android:id="@+id/stripChar2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="い"
                             android:textSize="28sp"
                             android:textColor="#1A1A2E"/>
-
                         <TextView
+                            android:id="@+id/stripRomaji2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="I"
@@ -191,29 +167,24 @@
                             android:textColor="#888888"/>
                     </LinearLayout>
 
-                    <!-- う -->
+                    <!-- Character 3 -->
                     <LinearLayout
+                        android:id="@+id/stripItem3"
                         android:layout_width="68dp"
                         android:layout_height="80dp"
                         android:orientation="vertical"
                         android:gravity="center"
                         android:background="@drawable/char_strip_inactive"
                         android:layout_marginEnd="8dp">
-
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="4dp"/>
-
                         <TextView
+                            android:id="@+id/stripChar3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="う"
                             android:textSize="28sp"
                             android:textColor="#1A1A2E"/>
-
                         <TextView
+                            android:id="@+id/stripRomaji3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="U"
@@ -221,29 +192,24 @@
                             android:textColor="#888888"/>
                     </LinearLayout>
 
-                    <!-- え -->
+                    <!-- Character 4 -->
                     <LinearLayout
+                        android:id="@+id/stripItem4"
                         android:layout_width="68dp"
                         android:layout_height="80dp"
                         android:orientation="vertical"
                         android:gravity="center"
                         android:background="@drawable/char_strip_inactive"
                         android:layout_marginEnd="8dp">
-
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="4dp"/>
-
                         <TextView
+                            android:id="@+id/stripChar4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="え"
                             android:textSize="28sp"
                             android:textColor="#1A1A2E"/>
-
                         <TextView
+                            android:id="@+id/stripRomaji4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="E"
@@ -251,28 +217,23 @@
                             android:textColor="#888888"/>
                     </LinearLayout>
 
-                    <!-- お -->
+                    <!-- Character 5 -->
                     <LinearLayout
+                        android:id="@+id/stripItem5"
                         android:layout_width="68dp"
                         android:layout_height="80dp"
                         android:orientation="vertical"
                         android:gravity="center"
                         android:background="@drawable/char_strip_inactive">
-
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_gravity="end"
-                            android:layout_marginEnd="4dp"/>
-
                         <TextView
+                            android:id="@+id/stripChar5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="お"
                             android:textSize="28sp"
                             android:textColor="#1A1A2E"/>
-
                         <TextView
+                            android:id="@+id/stripRomaji5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="O"
@@ -294,7 +255,6 @@
                 android:layout_marginBottom="16dp"
                 android:padding="20dp">
 
-                <!-- Level Pill -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -309,8 +269,8 @@
                     android:layout_gravity="end"
                     android:layout_marginBottom="8dp"/>
 
-                <!-- Giant Character -->
                 <TextView
+                    android:id="@+id/tvMainCharacter"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:text="あ"
@@ -319,7 +279,6 @@
                     android:gravity="center"
                     android:layout_marginBottom="16dp"/>
 
-                <!-- Listen Button -->
                 <Button
                     android:id="@+id/btnListen"
                     android:layout_width="match_parent"
@@ -332,8 +291,8 @@
                     android:drawableStart="@drawable/ic_volume"
                     android:layout_marginBottom="12dp"/>
 
-                <!-- Sounds Like -->
                 <TextView
+                    android:id="@+id/tvSoundsLike"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text='Sounds like: "a" as in Father'
@@ -380,39 +339,13 @@
                         android:layout_marginBottom="4dp"/>
 
                     <TextView
+                        android:id="@+id/tvMemoryTip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="It looks like a big &quot;A&quot; inside a circle!"
                         android:textSize="13sp"
                         android:textColor="#555555"/>
                 </LinearLayout>
-            </LinearLayout>
-
-            <!-- Usage Example Header -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:layout_marginBottom="10dp">
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:src="@drawable/ic_sparkle"
-                    android:layout_marginEnd="8dp"
-                    android:contentDescription="Usage"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USAGE EXAMPLE"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A1A2E"
-                    android:letterSpacing="0.08"/>
             </LinearLayout>
 
             <!-- Usage Example Card -->
@@ -427,14 +360,12 @@
                 android:layout_marginBottom="16dp"
                 android:padding="14dp">
 
-                <!-- Dark thumbnail -->
                 <LinearLayout
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/usage_thumb_background"
                     android:gravity="center"
                     android:layout_marginEnd="14dp">
-
                     <ImageView
                         android:layout_width="36dp"
                         android:layout_height="36dp"
@@ -447,8 +378,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
+                        android:id="@+id/tvExampleWord"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="あき"
@@ -456,16 +387,16 @@
                         android:textStyle="bold"
                         android:textColor="#1A1A2E"
                         android:layout_marginBottom="2dp"/>
-
                     <TextView
+                        android:id="@+id/tvExampleRomanization"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AKI"
                         android:textSize="11sp"
                         android:textColor="#888888"
                         android:letterSpacing="0.08"/>
-
                     <TextView
+                        android:id="@+id/tvExampleMeaning"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Autumn"
@@ -482,7 +413,7 @@
                     android:contentDescription="Play"/>
             </LinearLayout>
 
-            <!-- Upcoming Reward Card -->
+            <!-- Reward Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -493,20 +424,17 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:padding="16dp">
-
                 <ImageView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/ic_badge"
                     android:layout_marginEnd="12dp"
                     android:contentDescription="Badge"/>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -516,7 +444,6 @@
                         android:textColor="#00BFA5"
                         android:letterSpacing="0.08"
                         android:layout_marginBottom="4dp"/>
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -526,7 +453,6 @@
                         android:textColor="#1A1A2E"/>
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
@@ -540,18 +466,16 @@
         android:paddingEnd="16dp"
         android:background="#FFFFFF"
         android:elevation="8dp">
-
         <Button
             android:id="@+id/btnTraceChar"
             android:layout_width="0dp"
             android:layout_height="52dp"
             android:layout_weight="1"
-            android:text="Trace Char"
+            android:text="Test"
             android:textSize="15sp"
             android:textColor="#1A1A2E"
             android:background="@drawable/btn_outline"
             android:layout_marginEnd="12dp"/>
-
         <Button
             android:id="@+id/btnNextChar"
             android:layout_width="0dp"
@@ -562,7 +486,6 @@
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:background="@drawable/btn_primary"/>
-
     </LinearLayout>
 
 </LinearLayout>

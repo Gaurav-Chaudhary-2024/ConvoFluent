@@ -1,82 +1,54 @@
 package com.example.convofluent;
 
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class DailyExpressionsCommuting extends AppCompatActivity {
+public class DailyExpressionsCommuting extends LessonPlayerActivity {
 
-    private ImageButton btnBack, btnInfo, btnMic, btnSend;
-    private EditText etMessage;
-    private LinearLayout option1, option2, option3;
+    @Override protected String getLessonName() { return "DailyExpressionsCommuting"; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_player);
-
-        initViews();
         setupContent();
-        setupClickListeners();
-    }
-
-    private void initViews() {
-        btnBack   = findViewById(R.id.btnBack);
-        btnInfo   = findViewById(R.id.btnInfo);
-        btnMic    = findViewById(R.id.btnMic);
-        btnSend   = findViewById(R.id.btnSend);
-        etMessage = findViewById(R.id.etMessage);
-        option1   = findViewById(R.id.option1);
-        option2   = findViewById(R.id.option2);
-        option3   = findViewById(R.id.option3);
+        startConversation();
     }
 
     private void setupContent() {
-        ((android.widget.TextView) findViewById(R.id.tvLessonTitle))
-                .setText("Daily Expressions: Commuting");
-        ((android.widget.TextView) findViewById(R.id.tvTopicTitle))
-                .setText("Topic: Public Transport");
-        ((android.widget.TextView) findViewById(R.id.tvTopicDesc))
-                .setText("Learn essential phrases for navigating trains, buses, and stations in Japan.");
-        ((android.widget.TextView) findViewById(R.id.tvNextTask))
-                .setText("Next Task: Ask for Directions");
-
-        // Options
+        ((android.widget.TextView) findViewById(R.id.tvLessonTitle)).setText("Daily Expressions: Commuting");
+        ((android.widget.TextView) findViewById(R.id.tvTopicTitle)).setText("Topic: Public Transport");
+        ((android.widget.TextView) findViewById(R.id.tvTopicDesc)).setText(
+                "Learn essential phrases for navigating trains, buses, and stations in Japan.");
+        ((android.widget.TextView) findViewById(R.id.tvNextTask)).setText("Next Task: Ask for Directions");
         ((android.widget.TextView) findViewById(R.id.tvOption1Japanese)).setText("Sumimasen, eki wa doko desu ka?");
-        ((android.widget.TextView) findViewById(R.id.tvOption1English)).setText("Excuse me, where is the station?");
+        ((android.widget.TextView) findViewById(R.id.tvOption1English)).setText("Where is the station?");
         ((android.widget.TextView) findViewById(R.id.tvOption2Japanese)).setText("Kono densha wa Shinjuku ni tomarimasu ka?");
-        ((android.widget.TextView) findViewById(R.id.tvOption2English)).setText("Does this train stop at Shinjuku?");
+        ((android.widget.TextView) findViewById(R.id.tvOption2English)).setText("Does this stop at Shinjuku?");
         ((android.widget.TextView) findViewById(R.id.tvOption3Japanese)).setText("Kippu o ichi-mai kudasai");
         ((android.widget.TextView) findViewById(R.id.tvOption3English)).setText("One ticket, please");
     }
 
-    private void setupClickListeners() {
-        btnBack.setOnClickListener(v -> finish());
+    @Override
+    protected String getSystemPrompt() {
+        return "You are a friendly Japanese language tutor running a commuting role-play lesson. " +
+                "You play different characters: a station attendant, a fellow passenger, or a ticket machine prompt. " +
+                "When the student uses Japanese (even romaji), praise them briefly, correct mistakes gently, " +
+                "and continue the scenario. If they respond in English, encourage them to try Japanese. " +
+                "Keep replies SHORT — 2-4 sentences max. " +
+                "Always include a Japanese phrase with its English meaning in parentheses. " +
+                "Make the scenario feel like a real Tokyo train station.";
+    }
 
-        btnInfo.setOnClickListener(v ->
-                Toast.makeText(this, "Lesson: Daily Expressions - Commuting", Toast.LENGTH_SHORT).show());
+    @Override
+    protected String getOpeningMessage() {
+        return "🚆 Welcome to Shinjuku Station — one of the world's busiest!\n\n" +
+                "I'm a station attendant. You look a little lost — let's practice asking for help in Japanese!\n\n" +
+                "Try: \"Sumimasen, eki wa doko desu ka?\" (Excuse me, where is the station?) " +
+                "or tap an option below!";
+    }
 
-        option1.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Sumimasen, eki wa doko desu ka?", Toast.LENGTH_SHORT).show());
-
-        option2.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Kono densha wa Shinjuku ni tomarimasu ka?", Toast.LENGTH_SHORT).show());
-
-        option3.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Kippu o ichi-mai kudasai", Toast.LENGTH_SHORT).show());
-
-        btnMic.setOnClickListener(v ->
-                Toast.makeText(this, "Voice input coming soon!", Toast.LENGTH_SHORT).show());
-
-        btnSend.setOnClickListener(v -> {
-            String message = etMessage.getText().toString().trim();
-            if (!message.isEmpty()) {
-                Toast.makeText(this, "Sent: " + message, Toast.LENGTH_SHORT).show();
-                etMessage.setText("");
-            }
-        });
+    @Override
+    protected void onInfoClick() {
+        Toast.makeText(this, "Lesson: Daily Expressions - Commuting", Toast.LENGTH_SHORT).show();
     }
 }

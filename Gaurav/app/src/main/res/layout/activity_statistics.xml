@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Top Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATISTICS"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"
+                android:letterSpacing="0.1"/>
+
+            <!-- Purple underline accent -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:background="#6B3EFF"
+                android:layout_marginTop="3dp"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_settings"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Settings"/>
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Profile Card (purple bg) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/stats_profile_card_bg"
+                android:padding="20dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Avatar + Name Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <FrameLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="14dp">
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/avatar_background"
+                            android:scaleType="fitXY"
+                            android:contentDescription="Avatar"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LVL 14"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/level_badge_profile"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_gravity="bottom|center_horizontal"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alex Johnson"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="4dp">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/ic_star"
+                                android:contentDescription="Star"
+                                android:layout_marginEnd="4dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="INTERMEDIATE POLYGLOT"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:textColor="#D4B8FF"
+                                android:letterSpacing="0.05"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- XP Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CURRENT XP"
+                            android:textSize="10sp"
+                            android:textColor="#D4B8FF"
+                            android:letterSpacing="0.08"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2,450"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NEXT GOAL"
+                            android:textSize="10sp"
+                            android:textColor="#D4B8FF"
+                            android:letterSpacing="0.08"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="550 XP to LVL 15"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- XP Progress Bar -->
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progress="82"
+                    android:progressDrawable="@drawable/progress_fill_white"
+                    android:background="@drawable/progress_track_white"/>
+
+            </LinearLayout>
+
+            <!-- Stats Row — 3 cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <!-- Streak -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/stat_mini_card_bg"
+                    android:padding="14dp"
+                    android:layout_marginEnd="6dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_streak"
+                        android:contentDescription="Streak"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A2E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STREAK"
+                        android:textSize="10sp"
+                        android:textColor="#AAAAAA"
+                        android:letterSpacing="0.08"/>
+                </LinearLayout>
+
+                <!-- Weekly XP -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/stat_mini_card_bg"
+                    android:padding="14dp"
+                    android:layout_marginEnd="6dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_xp"
+                        android:contentDescription="Weekly"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="850"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A2E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WEEKLY"
+                        android:textSize="10sp"
+                        android:textColor="#AAAAAA"
+                        android:letterSpacing="0.08"/>
+                </LinearLayout>
+
+                <!-- League -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/stat_mini_card_bg"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_trophy"
+                        android:contentDescription="League"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#4"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A2E"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LEAGUE"
+                        android:textSize="10sp"
+                        android:textColor="#AAAAAA"
+                        android:letterSpacing="0.08"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Earning Opportunities -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="EARNING OPPORTUNITIES"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E"
+                    android:letterSpacing="0.04"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RESETS IN 4H"
+                    android:textSize="11sp"
+                    android:textColor="#6B3EFF"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Opportunities Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <!-- Core Lesson -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/opportunity_card_bg"
+                        android:padding="12dp"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_lessons"
+                            android:background="@drawable/opp_icon_bg_purple"
+                            android:padding="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="Core Lesson"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Core Lesson"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#1A1A2E"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+50 XP"
+                                android:textSize="12sp"
+                                android:textColor="#6B3EFF"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Speed Trial -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/opportunity_card_bg"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_streak"
+                            android:background="@drawable/opp_icon_bg_orange"
+                            android:padding="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="Speed Trial"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Speed Trial"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#1A1A2E"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+100 XP"
+                                android:textSize="12sp"
+                                android:textColor="#6B3EFF"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Refer Friend -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/opportunity_card_bg"
+                        android:padding="12dp"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_person"
+                            android:background="@drawable/opp_icon_bg_teal"
+                            android:padding="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="Refer Friend"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Refer Friend"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#1A1A2E"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+500 XP"
+                                android:textSize="12sp"
+                                android:textColor="#6B3EFF"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Daily Recap -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/opportunity_card_bg"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_progress_icon"
+                            android:background="@drawable/opp_icon_bg_purple"
+                            android:padding="6dp"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="Daily Recap"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Daily Recap"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#1A1A2E"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+25 XP"
+                                android:textSize="12sp"
+                                android:textColor="#6B3EFF"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Growth Velocity Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/opportunity_card_bg"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GROWTH VELOCITY"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#AAAAAA"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="4dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="↗  +24% from last week"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A1A2E"/>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_progress_icon"
+                        android:contentDescription="Growth"/>
+                </LinearLayout>
+
+                <!-- Simple Chart placeholder with day labels -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/chart_line_bg"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="M" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="T" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="W" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="T" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="F" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="S" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="S" android:textSize="11sp" android:textColor="#AAAAAA" android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Recent Wins -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RECENT WINS"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See All"
+                    android:textSize="13sp"
+                    android:textColor="#6B3EFF"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Recent Wins List -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/opportunity_card_bg"
+                android:padding="4dp"
+                android:layout_marginBottom="20dp">
+
+                <!-- Win 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_lessons"
+                        android:background="@drawable/win_icon_bg"
+                        android:padding="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="Spanish Vocabulary"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Spanish Vocabulary IV"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A2E"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textSize="12sp"
+                            android:textColor="#AAAAAA"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_xp"
+                            android:layout_marginEnd="4dp"
+                            android:contentDescription="XP"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+50 XP"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#6B3EFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+                <!-- Win 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_streak"
+                        android:background="@drawable/win_icon_bg"
+                        android:padding="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="Lightning Round"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lightning Round"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A2E"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5 hours ago"
+                            android:textSize="12sp"
+                            android:textColor="#AAAAAA"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_xp"
+                            android:layout_marginEnd="4dp"
+                            android:contentDescription="XP"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+100 XP"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#6B3EFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+                <!-- Win 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_star"
+                        android:background="@drawable/win_icon_bg"
+                        android:padding="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="7-Day Streak"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7-Day Perfect Streak"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A1A2E"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yesterday"
+                            android:textSize="12sp"
+                            android:textColor="#AAAAAA"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_xp"
+                            android:layout_marginEnd="4dp"
+                            android:contentDescription="XP"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+25 XP"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#6B3EFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Hall of Fame -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HALL OF FAME"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hof_badge_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_trophy"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="Trophy"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3/12 EARNED"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#6B3EFF"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Hall of Fame Badges Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/opportunity_card_bg"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <!-- Striker (earned) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_streak"
+                        android:background="@drawable/badge_earned_bg"
+                        android:padding="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:contentDescription="Striker"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STRIKER"
+                        android:textSize="10sp"
+                        android:textColor="#AAAAAA"
+                        android:letterSpacing="0.06"/>
+                </LinearLayout>
+
+                <!-- Perfect (earned) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_star"
+                        android:background="@drawable/badge_earned_bg"
+                        android:padding="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:contentDescription="Perfect"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PERFECT"
+                        android:textSize="10sp"
+                        android:textColor="#AAAAAA"
+                        android:letterSpacing="0.06"/>
+                </LinearLayout>
+
+                <!-- Sonic (earned) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_xp"
+                        android:background="@drawable/badge_earned_bg"
+                        android:padding="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:contentDescription="Sonic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SONIC"
+                        android:textSize="10sp"
+                        android:textColor="#AAAAAA"
+                        android:letterSpacing="0.06"/>
+                </LinearLayout>
+
+                <!-- Legend (not earned) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_trophy"
+                        android:background="@drawable/badge_locked_bg"
+                        android:padding="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:contentDescription="Legend"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LEGEND"
+                        android:textSize="10sp"
+                        android:textColor="#CCCCCC"
+                        android:letterSpacing="0.06"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Claim Weekly Loot Button -->
+            <LinearLayout
+                android:id="@+id/btnClaimLoot"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/btn_primary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLAIM WEEKLY LOOT"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:letterSpacing="0.08"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/tabDashboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                android:contentDescription="Dashboard"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:textSize="11sp"
+                android:textColor="#AAAAAA"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabLearn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_lessons"
+                android:contentDescription="Learn"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learn"
+                android:textSize="11sp"
+                android:textColor="#AAAAAA"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_person"
+                android:contentDescription="Profile"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="11sp"
+                android:textColor="#6B3EFF"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

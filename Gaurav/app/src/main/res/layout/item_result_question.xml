@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp"
+    android:layout_marginBottom="10dp">
+
+    <!-- Q number row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvQNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Question 1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A2E"/>
+
+        <TextView
+            android:id="@+id/tvQType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listening"
+            android:textSize="11sp"
+            android:textColor="#6B3EFF"
+            android:background="@drawable/listening_chip_bg"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/tvQStatus"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:text="✓"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#4CAF50"
+            android:gravity="center"
+            android:background="@drawable/result_status_icon_bg"/>
+    </LinearLayout>
+
+    <!-- Prompt label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question Prompt"
+        android:textSize="11sp"
+        android:textColor="#AAAAAA"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvQPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A2E"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- User answer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YOUR ANSWER"
+        android:textSize="10sp"
+        android:textColor="#AAAAAA"
+        android:letterSpacing="0.06"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvUserAns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="14sp"
+        android:textColor="#1A1A2E"
+        android:padding="10dp"
+        android:background="@drawable/result_answer_correct_bg"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Correct answer (hidden if correct) -->
+    <LinearLayout
+        android:id="@+id/correctAnswerRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CORRECT ANSWER"
+            android:textSize="10sp"
+            android:textColor="#6B3EFF"
+            android:letterSpacing="0.06"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvCorrectAns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="#1A1A2E"
+            android:padding="10dp"
+            android:background="@drawable/result_answer_correct_bg"
+            android:layout_marginBottom="8dp"/>
+    </LinearLayout>
+
+    <!-- Expert Tip (hidden if correct) -->
+    <LinearLayout
+        android:id="@+id/expertTipRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/result_expert_tip_bg"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="5dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="✦ " android:textSize="11sp" android:textColor="#6B3EFF"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="EXPERT TIP"
+                android:textSize="11sp" android:textStyle="bold" android:textColor="#6B3EFF"
+                android:letterSpacing="0.05"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvExpertTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="13sp"
+            android:textColor="#444444"
+            android:lineSpacingMultiplier="1.4"
+            android:fontStyle="italic"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,51 +1,25 @@
 package com.example.convofluent;
 
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class OrderingAtIzakaya extends AppCompatActivity {
+public class OrderingAtIzakaya extends LessonPlayerActivity {
 
-    private ImageButton btnBack, btnInfo, btnMic, btnSend;
-    private EditText etMessage;
-    private LinearLayout option1, option2, option3;
+    @Override protected String getLessonName() { return "OrderingAtIzakaya"; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_player);
-
-        initViews();
         setupContent();
-        setupClickListeners();
-    }
-
-    private void initViews() {
-        btnBack  = findViewById(R.id.btnBack);
-        btnInfo  = findViewById(R.id.btnInfo);
-        btnMic   = findViewById(R.id.btnMic);
-        btnSend  = findViewById(R.id.btnSend);
-        etMessage = findViewById(R.id.etMessage);
-        option1  = findViewById(R.id.option1);
-        option2  = findViewById(R.id.option2);
-        option3  = findViewById(R.id.option3);
+        startConversation();
     }
 
     private void setupContent() {
-        // Set lesson specific content
-        ((android.widget.TextView) findViewById(R.id.tvLessonTitle))
-                .setText("Ordering at Izakaya");
-        ((android.widget.TextView) findViewById(R.id.tvTopicTitle))
-                .setText("Topic: Restaurant Dining");
-        ((android.widget.TextView) findViewById(R.id.tvTopicDesc))
-                .setText("Practice polite forms (Desu/Masu) while ordering food and asking for recommendations.");
-        ((android.widget.TextView) findViewById(R.id.tvNextTask))
-                .setText("Next Task: Respond to the Waiter");
-
-        // Options
+        ((android.widget.TextView) findViewById(R.id.tvLessonTitle)).setText("Ordering at Izakaya");
+        ((android.widget.TextView) findViewById(R.id.tvTopicTitle)).setText("Topic: Restaurant Dining");
+        ((android.widget.TextView) findViewById(R.id.tvTopicDesc)).setText(
+                "Practice polite forms (Desu/Masu) while ordering food and asking for recommendations.");
+        ((android.widget.TextView) findViewById(R.id.tvNextTask)).setText("Next Task: Respond to the Waiter");
         ((android.widget.TextView) findViewById(R.id.tvOption1Japanese)).setText("Edamame o kudasai");
         ((android.widget.TextView) findViewById(R.id.tvOption1English)).setText("Order Edamame");
         ((android.widget.TextView) findViewById(R.id.tvOption2Japanese)).setText("Osusume wa nan desu ka?");
@@ -54,30 +28,28 @@ public class OrderingAtIzakaya extends AppCompatActivity {
         ((android.widget.TextView) findViewById(R.id.tvOption3English)).setText("No, thank you");
     }
 
-    private void setupClickListeners() {
-        btnBack.setOnClickListener(v -> finish());
+    @Override
+    protected String getSystemPrompt() {
+        return "You are a friendly Japanese language tutor running an izakaya role-play lesson. " +
+                "You play the role of a waiter at a busy Tokyo izakaya. " +
+                "When the student responds in Japanese (even romaji), praise them briefly, " +
+                "correct any mistakes gently, then continue the conversation naturally. " +
+                "If they respond in English, encourage them to try in Japanese and give a hint. " +
+                "Keep each reply SHORT — 2-4 sentences max. " +
+                "Always include a Japanese phrase with its English meaning in parentheses. " +
+                "Stay in character and make the lesson fun.";
+    }
 
-        btnInfo.setOnClickListener(v ->
-                Toast.makeText(this, "Lesson: Ordering at Izakaya", Toast.LENGTH_SHORT).show());
+    @Override
+    protected String getOpeningMessage() {
+        return "Irasshaimase! 🏮 Welcome to Sakura Izakaya!\n\n" +
+                "I'm your waiter today. Let's practice ordering in Japanese!\n\n" +
+                "Try: \"Edamame o kudasai\" (Edamame, please) " +
+                "or tap one of the response options below!";
+    }
 
-        option1.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Edamame o kudasai", Toast.LENGTH_SHORT).show());
-
-        option2.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Osusume wa nan desu ka?", Toast.LENGTH_SHORT).show());
-
-        option3.setOnClickListener(v ->
-                Toast.makeText(this, "You selected: Iie, kekkou desu", Toast.LENGTH_SHORT).show());
-
-        btnMic.setOnClickListener(v ->
-                Toast.makeText(this, "Voice input coming soon!", Toast.LENGTH_SHORT).show());
-
-        btnSend.setOnClickListener(v -> {
-            String message = etMessage.getText().toString().trim();
-            if (!message.isEmpty()) {
-                Toast.makeText(this, "Sent: " + message, Toast.LENGTH_SHORT).show();
-                etMessage.setText("");
-            }
-        });
+    @Override
+    protected void onInfoClick() {
+        Toast.makeText(this, "Lesson: Ordering at Izakaya", Toast.LENGTH_SHORT).show();
     }
 }
