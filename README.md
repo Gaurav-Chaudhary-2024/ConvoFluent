@@ -72,7 +72,7 @@ No two learners experience the same curriculum.
 ## 👨‍💻 Project Team
 
 - 👤 **Gaurav Chaudhary (Team Leader)**
-- 👤 **Sahil Sharma**
+- 👤 **Sahil Sharma** (UI/UX Developer,Backend Developer)
 - 👤 **Ayushi Yadav**
 - 👤 **Roushan Kumar**
 
